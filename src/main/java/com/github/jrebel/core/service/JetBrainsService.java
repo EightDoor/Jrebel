@@ -49,7 +49,7 @@ public class JetBrainsService {
                         <responseCode>OK</responseCode>
                         <salt>%s</salt>
                     </PingResponse>
-                    """.formatted(salt);
+                    """. (salt);
             String xmlSignature = RsaSign.Sign(xmlContent);
             String body = "<!-- " + xmlSignature + " -->\n" + xmlContent;
             response.getWriter().print(body);
